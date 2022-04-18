@@ -1,9 +1,7 @@
 package Pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -28,10 +26,10 @@ public class TestPage {
     @FindBy(how = How.XPATH, using = "//button[@type='submit']")
     private WebElement submitButton;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='container']//section[3]//input")
+    @FindBy(how = How.XPATH, using = "(//input[@class='_30VH1S']/following-sibling::div)[11]")
     private WebElement flipkartAssured;
 
-    @FindBy(how = How.XPATH, using = "//div[@id='container']//section[6]//input")
+    @FindBy(how = How.XPATH, using = "(//input[@class='_30VH1S']/following-sibling::div)[1]")
     private WebElement brand;
 
     @FindBy(how = How.XPATH, using = "//div[text()='Price -- High to Low']")
@@ -46,29 +44,31 @@ public class TestPage {
     @FindBy(how = How.XPATH, using = "//div[@class='_30jeq3 _1_WHN1']")
     private List<WebElement> price;
 
-    public void searchMobile(String value) {
+    public void searchMobile(String value)throws Exception {
         driver.get("https://www.flipkart.com/");
+       // Thread.sleep(25000);
         popupClose.click();
+        //Thread.sleep(15000);
         searchBar.sendKeys(value);
         submitButton.click();
     }
 
     public void clickFlipKartAssured() {
-        Actions actions=new Actions(driver);
+      /*  Actions actions=new Actions(driver);
         actions.moveToElement(flipkartAssured).perform();
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", flipkartAssured);
         ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('readonly','readonly')",flipkartAssured);
-        actions.moveToElement(flipkartAssured).doubleClick();
-        //flipkartAssured.click();
+        actions.moveToElement(flipkartAssured).doubleClick();*/
+        flipkartAssured.click();
     }
 
     public void brandSelect() {
-        Actions actions=new Actions(driver);
+      /*  Actions actions=new Actions(driver);
         actions.moveToElement(brand).perform();
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", brand);
         ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('readonly','readonly')",brand);
-        actions.moveToElement(brand).doubleClick();
-       // brand.click();
+        actions.moveToElement(brand).doubleClick();*/
+        brand.click();
     }
 
     public void mobileSort() {
@@ -88,8 +88,8 @@ public class TestPage {
             counter += 1;
             mobiles.add("Product--" + String.valueOf(counter));
             mobiles.add(listOfMobilesProductName.get(i).getAttribute("alt"));
-            mobiles.add("https://www.flipkart.com/" + listOfMobilesDetailLink.get(i).getAttribute("href"));
-            mobiles.add(price.get(i).getText());
+            mobiles.add(/*"https://www.flipkart.com/" + */listOfMobilesDetailLink.get(i).getAttribute("href"));
+            mobiles.add(price.get(i).getText().replaceAll(",","").substring(1));
         }
         listOfProducts.add(mobiles);
         return mobiles;

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Pool" thread-count="5" parallel="tests">
+<suite name="Pool" thread-count="1" parallel="tests">
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
     </test>
-    <test name="EdgeTest">
+ <!--   <test name="EdgeTest">
         <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
-    </test>
-    <test name="EdgeTest1">
+    </test>-->
+   <test name="EdgeTest1">
         <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
@@ -31,5 +31,4 @@
             <class name="Modules.TestModule"/>
         </classes>
     </test>
-    
 </suite>
