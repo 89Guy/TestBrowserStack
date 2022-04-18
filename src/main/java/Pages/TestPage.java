@@ -1,6 +1,5 @@
 package Pages;
 
-import Context.ThreadContextForScenarios;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,7 +73,7 @@ public class TestPage {
 
     public void mobileSort() {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

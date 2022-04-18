@@ -1,7 +1,6 @@
 package Pages;
 
 import Context.ThreadContextForScenarios;
-import Enums.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +23,6 @@ public class BasePage {
             this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             ThreadContextForScenarios.getInstance();
             ThreadContextForScenarios.setScenarioContext("driver",driver);
-            driver.get(Constants.CSVJSONURL.value);
         }
         else{
             WebDriverManager.firefoxdriver().setup();
@@ -36,7 +34,6 @@ public class BasePage {
                 this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                 ThreadContextForScenarios.getInstance();
                 ThreadContextForScenarios.setScenarioContext("driver",driver);
-                driver.get(Constants.CSVJSONURL.value);
             }
             catch(Exception e){
                 System.out.println("Issue with instantiating driver on AWS Unix system");
