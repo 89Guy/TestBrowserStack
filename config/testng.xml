@@ -31,11 +31,5 @@
             <class name="Modules.TestModule"/>
         </classes>
     </test>
-    <test name="EdgeTest4">
-        <parameter name="browser" value="Edge"/>
-        <classes>
-            <class name="Modules.TestModule"/>
-        </classes>
-    </test>
-
+    
 </suite>
