@@ -8,31 +8,31 @@
         </classes>
     </test>
     <test name="EdgeTest">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
     </test>
     <test name="EdgeTest1">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
     </test>
     <test name="EdgeTest2">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
     </test>
     <test name="EdgeTest3">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
     </test>
     <test name="EdgeTest4">
-        <parameter name="browser" value="Chrome"/>
+        <parameter name="browser" value="Edge"/>
         <classes>
             <class name="Modules.TestModule"/>
         </classes>
